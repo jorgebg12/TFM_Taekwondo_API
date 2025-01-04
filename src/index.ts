@@ -1,0 +1,29 @@
+import cors from "cors";
+import express from "express";
+import techniqueRouter from "./routes/techniques";
+import usersRouter from "./routes/users";
+
+const app = express();
+
+app.use(
+  cors({
+    origin: "http://localhost:4200",
+    methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
+app.use(express.json());
+
+const PORT = 3000;
+
+app.get("/ping", (_req, res) => {
+  console.log("someone pinged here");
+  res.send("pong");
+});
+
+app.use("/api/techniques", techniqueRouter);
+app.use("/user", usersRouter);
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
