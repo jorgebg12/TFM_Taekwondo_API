@@ -4,10 +4,11 @@ import { InsertUserEntry, UserEntry } from "../types";
 
 const router = express.Router();
 
-router.get("/test/getAllUsers", async (_req, res) => {
-  const users = await UserRepository.getAllUsers();
-  res.send(users);
-});
+// router.get("/test/getAllUsers", async (_req, res) => {
+//   const users = await UserRepository.getAllUsers();
+//   res.send(users);
+// });
+
 router.post("/login", async (req, res) => {
   const { email, password }: UserEntry = req.body;
   try {
@@ -27,9 +28,5 @@ router.post("/register", async (req, res) => {
     res.status(400).send(e.message);
   }
 });
-
-// router.post("/logout", (_req, _res) => {});
-
-// router.get("/protected", (_req, _res) => {});
 
 export default router;

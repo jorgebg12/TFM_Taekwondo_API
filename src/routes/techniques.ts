@@ -4,9 +4,9 @@ import { TechniqueType, UserTechniqueEntry } from "../types";
 
 const router = express.Router();
 
-router.get("/", async (_, res) => {
-  res.send(await TechniquesRepository.getAllTechniques());
-});
+// router.get("/", async (_, res) => {
+//   res.send(await TechniquesRepository.getAllTechniques());
+// });
 
 router.get("/atacks", async (_, res) => {
   res.send(await TechniquesRepository.getTechniqueByType(TechniqueType.Ataque));

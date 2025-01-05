@@ -16,7 +16,7 @@ const config = {
   host: process.env.MYSQL_HOST,
   user: process.env.MYSQL_USER,
   port: parseInt(process.env.MYSQL_PORT || "3306"),
-  password: process.env.MYSQL_PASSWORS || "",
+  password: process.env.MYSQL_PASSWORD || "",
   database: process.env.MYSQL_DATABASE,
 };
 
@@ -26,6 +26,7 @@ export async function connect() {
 }
 
 export class UserRepository {
+  //test
   static async getAllUsers(): Promise<UserEntry[]> {
     const db = await connect();
     const [rows] = await db.query("SELECT * FROM users;");
@@ -134,6 +135,7 @@ class Validations {
 }
 
 export class TechniquesRepository {
+  //test
   static async getAllTechniques(): Promise<TechniqueEntry[]> {
     const db = await connect();
     const [rows] = await db.query("SELECT * FROM techniques;");

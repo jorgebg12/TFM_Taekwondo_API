@@ -13,7 +13,7 @@ Cuando este creada, en la raíz del proyecto se crea un fichero .env donde se co
 MYSQL_HOST = 'localhost'
 MYSQL_USER = 'root'
 MYSQL_PORT = 3306
-MYSQL_PASSWORS = ''
+MYSQL_PASSWORD = ''
 MYSQL_DATABASE ='techniquesdb'
 ```
 
