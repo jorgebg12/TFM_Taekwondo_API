@@ -17,7 +17,7 @@ app.use(
 );
 app.use(express.json());
 
-const PORT = 3000;
+const PORT = process.env.API_PORT || 3000;
 
 //test
 app.get("/ping", (_req, res) => {
